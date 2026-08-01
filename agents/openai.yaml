@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Components"
+  short_description: "构建与维护 Components 插件主页和组件文件"
+  default_prompt: "Use $obsidian-components to build a usable Components homepage for my Obsidian vault."
