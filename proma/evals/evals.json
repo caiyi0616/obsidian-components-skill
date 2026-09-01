@@ -1,0 +1,38 @@
+{
+  "skill_name": "obsidian-components",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想在 Obsidian Components 里做一个每日主页仪表盘：顶部日期、时钟和日期进度，中间显示今日任务与最近日记，底部放统计数字和习惯热力图；桌面用网格，移动端也要能用，并从日记目录筛选。请给出可执行的创建和配置步骤，并明确哪些地方需要按当前版本核验。",
+      "expected_output": "使用 Components 的真实创建/布局/筛选/任务清单/统计数字路径；不把 Dataview 查询或抽象 YAML 当成已验证配置；明确网格、移动端、主页设置、热力图和版本缺口。",
+      "files": [],
+      "expectations": [
+        "说明通过 Components 创建组件文件，并选择网格布局，避免把抽象 YAML 当成插件配置",
+        "说明日记数据应先按文件路径等真实筛选条件限定，并覆盖任务清单、统计数字和摘录/数据视图的 Components 选择",
+        "明确移动端行为、主页原生设置缺失、习惯热力图实现和版本差异需要核验"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "请为我的书库设计一个 Components 数据视图方案。书籍 Markdown 文件都在 Books 目录，frontmatter 有 cover、author、status、category、rating；我需要表格批量维护、画廊封面、按 status 的看板、总数/平均评分、分类图表，以及一个按钮打开阅读网页。请给出真实可用的配置步骤和需要补充的信息。",
+      "expected_output": "先建立目录和属性模型，再给出表格/画廊/看板/统计/图表/按钮的 Components 配置路径；区分已确认功能和示意查询；指出阅读 URL、字段类型、分组写回和缺失封面等问题。",
+      "files": [],
+      "expectations": [
+        "先限定 Books 目录和 Markdown 属性，并说明表格属性编辑/批量操作是写回源文件的 Components 能力",
+        "覆盖表格、画廊、看板分组、统计数字和图表的对应配置，且不把 TABLE/SQL/Dataview 语法冒充 Components 配置",
+        "按钮打开外部阅读网页前要求真实 URL 字段或规则，并提示按钮/看板拖拽的写回与删除副作用"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "我想写一个 Components 3.0 自定义习惯追踪组件：视图用 JSX，设置面板可保存标题、颜色和目标值，视图显示进度并支持点击增加记录，还需要 CSS。请给出源码结构、最小代码形状、可用 API 和安全/生命周期注意事项；不要使用 TypeScript 或 import。",
+      "expected_output": "遵循 Components 3.0 三段源码与 App/JSX/JavaScript 约束；指出 useDataStorage 命名矛盾；提供不冒充已验证宿主 API 的最小示例，并覆盖 CSS、Hooks、null 上下文、清理和写入风险。",
+      "files": [],
+      "expectations": [
+        "明确视图源码、设置项源码和 CSS 三段结构，运行时使用 JSX/JavaScript、App 函数且不使用 TypeScript/import",
+        "提及 useDataStorage 的 setData/saveData 文档矛盾，并把宿主 props、刷新接口等不确定内容标为待核验",
+        "覆盖 useThisFile/useActiveFile 可能为 null、定时器/监听清理、实例数据隔离、颜色校验和持久化副作用"
+      ]
+    }
+  ]
+}

@@ -62,3 +62,13 @@ Components 的 `.components` JSON 会随版本变化。优先以目标库中已�
 - 不覆盖已有组件或首页，除非用户明确要求或已有可恢复备份。
 - 创建文件、调用命令、运行 Templater 或脚本前，先验证目标和用户意图。
 - 自定义组件和 Dataview 查询属于可执行内容，必须先审查。
+
+## Proma 版本（`proma/`）
+
+`proma/` 目录是面向 Proma Agent 的 `obsidian-components` Skill（v1.0.0），基于 `components-docs` 官方资料整理，与根目录的 Codex 版本相互独立、互不影响。
+
+- `proma/SKILL.md`：触发条件、事实等级（【文档已确认】/【示意】/【待核验】）、标准工作流与参考文件路由。
+- `proma/references/`：布局与基础组件、数据视图与查询、自定义 JSX 与 CSS、脚本/API/安全边界、版本与文档缺口，共 4+1 份。
+- `proma/evals/evals.json`：3 个回归评估（每日主页仪表盘、书库数据视图、自定义习惯组件）。
+
+使用方式：将 `proma/` 下的内容通过软链接挂到 Agent 的 skills 目录（如 `.agents/skills/obsidian-components` 或 Proma 工作区 `skills/`），或在支持时直接指向该目录。
